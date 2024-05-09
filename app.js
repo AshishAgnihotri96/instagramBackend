@@ -27,11 +27,12 @@ app.use('/api/v1', user);
 app.use('/api/v1', chat);
 app.use('/api/v1', message);
 
+app.use(express.static(path.join(__dirname, 'build')));
 
-
-    app.get('/', (req, res) => {
-        res.send('Server is Running! 🚀');
-    });
+// Handle React Router routes by serving index.html
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 // error middleware
