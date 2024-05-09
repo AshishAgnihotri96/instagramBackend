@@ -4,7 +4,7 @@ const errorMiddleware = require('./middlewares/error');
 const path = require('path');
 const cors = require('cors');
 const app = express()
-
+//using cors
 
 app.use(cors());
 app.use(express.json());
